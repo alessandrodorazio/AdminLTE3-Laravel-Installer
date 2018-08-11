@@ -1,36 +1,30 @@
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
     <!-- Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library -->
-    <li class="nav-item has-treeview menu-open">
-        <a href="#" class="nav-link active">
-            <i class="nav-icon fa fa-dashboard"></i>
+    <li class="nav-item">
+        <a href="{{ route('home') }}" class="nav-link @if(Request::is('/')) active @endif">
+            <i class="nav-icon fa fa-home"></i>
             <p>
-                Starter Pages
-                <i class="right fa fa-angle-left"></i>
+                Home page
             </p>
         </a>
-        <ul class="nav nav-treeview">
-            <li class="nav-item">
-                <a href="#" class="nav-link active">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Active Page</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Inactive Page</p>
-                </a>
-            </li>
-        </ul>
     </li>
     <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fa fa-th"></i>
-            <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-            </p>
+        <a href="{{ route('progetti.index') }}" class="nav-link @if(Request::is('progetti')) active @endif">
+            <i class="nav-icon fa fa-project-diagram"></i>
+            <p>Progetti</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{ route('clienti.index') }}" class="nav-link @if(Request::is('clienti*')) active @endif">
+            <i class="nav-icon fa fa-user-tie"></i>
+            <p>Clienti</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{ route('fatture.index') }}" class="nav-link">
+            <i class="nav-icon fa fa-file-invoice-dollar"></i>
+            <p>Fatture</p>
         </a>
     </li>
 </ul>
